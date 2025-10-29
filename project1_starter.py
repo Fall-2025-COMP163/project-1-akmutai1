@@ -43,7 +43,7 @@ def calculate_stats(character_class, level):
     - Rogues: Medium strength, medium magic, low health
     - Clerics: Medium strength, high magic, high health
     """
-     if character_class.lower() == "warrior":
+    if character_class.lower() == "warrior":
         strength = 15 + (level - 1) * 3
         magic = 5 + (level - 1)
         health = 120 + (level - 1) * 10
@@ -51,7 +51,7 @@ def calculate_stats(character_class, level):
     elif character_class.lower() == "mage":
         strength = 5 + (level - 1)
         magic = 15 + (level - 1) * 3
-        health == 80 + (level - 1) * 8
+        health = 80 + (level - 1) * 8
 
     elif character_class.lower() == "paladin":
         strength = 10 + (level - 1) * 2
@@ -65,7 +65,8 @@ def calculate_stats(character_class, level):
 
     else:
         print("Invalid character class")
-    pass
+    return strength, magic, health
+    pass # used AI to find indentation error in first if statement, to find UnboundLocalError in line 54.
 
 def save_character(character, filename):
     """
