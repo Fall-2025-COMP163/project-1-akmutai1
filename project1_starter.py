@@ -43,8 +43,28 @@ def calculate_stats(character_class, level):
     - Rogues: Medium strength, medium magic, low health
     - Clerics: Medium strength, high magic, high health
     """
-    # TODO: Implement this function
-    # Return a tuple: (strength, magic, health)
+     if character_class.lower() == "warrior":
+        strength = 15 + (level - 1) * 3
+        magic = 5 + (level - 1)
+        health = 120 + (level - 1) * 10
+
+    elif character_class.lower() == "mage":
+        strength = 5 + (level - 1)
+        magic = 15 + (level - 1) * 3
+        health == 80 + (level - 1) * 8
+
+    elif character_class.lower() == "paladin":
+        strength = 10 + (level - 1) * 2
+        magic = 10 + (level - 1) * 2
+        health = 70 + (level - 1) * 6
+
+    elif character_class.lower() == "cleric":
+        strength = 8 + (level - 1) * 2
+        magic = 14 + (level - 1) * 2
+        health = 110 + (level - 1) * 8
+
+    else:
+        print("Invalid character class")
     pass
 
 def save_character(character, filename):
