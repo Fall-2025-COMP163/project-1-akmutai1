@@ -82,9 +82,15 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
-    # TODO: Implement this function
-    # Remember to handle file errors gracefully
-    pass
+    with open(filename, "w") as file:
+        file.write(f"Character Name: {character['name']}\n")
+        file.write(f"Class: {character['class']}\n")
+        file.write(f"Level: {character['level']}\n")
+        file.write(f"Strength: {character['strength']}\n")
+        file.write(f"Magic: {character['magic']}\n")
+        file.write(f"Health: {character['health']}\n")
+        file.write(f"Gold: {character['gold']}\n")
+    
 
 def load_character(filename):
     """
@@ -132,5 +138,5 @@ if __name__ == "__main__":
     char = create_character("TestHero", "Warrior")
     print(char)
     # display_character(char)
-    # save_character(char, "my_character.txt")
+    save_character(char, "my_character.txt")
     # loaded = load_character("my_character.txt")
