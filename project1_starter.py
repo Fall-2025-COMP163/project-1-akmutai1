@@ -129,7 +129,8 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
-    # char = create_character("TestHero", "Warrior")
+    char = create_character("TestHero", "Warrior")
+    print(char)
     # display_character(char)
     # save_character(char, "my_character.txt")
     # loaded = load_character("my_character.txt")
