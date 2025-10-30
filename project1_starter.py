@@ -116,8 +116,15 @@ def display_character(character):
     Health: 80
     Gold: 100
     """
-    # TODO: Implement this function
-    pass
+    print("=== CHARACTER SHEET ===")
+    print(f"Name: {Character['name']")
+    print(f"Name: {Class['class']")
+    print(f"Name: {Level['level']")
+    print(f"Name: {Strength['strength']")
+    print(f"Name: {Magic['magic']")
+    print(f"Name: {Health['health']")
+    print(f"Name: {Gold['gold']")
+    
 
 def level_up(character):
     """
