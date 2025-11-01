@@ -123,14 +123,13 @@ def display_character(character):
     Gold: 100
     """
     print("=== CHARACTER SHEET ===")
-    print(f"Name: {Character['name']")
-    print(f"Name: {Class['class']")
-    print(f"Name: {Level['level']")
-    print(f"Name: {Strength['strength']")
-    print(f"Name: {Magic['magic']")
-    print(f"Name: {Health['health']")
-    print(f"Name: {Gold['gold']")
-    
+    print(f"Name: {character['name']}")
+    print(f"Class: {character['class']}")
+    print(f"Level: {character['level']}")
+    print(f"Strength: {character['strength']}")
+    print(f"Magic: {character['magic']}")
+    print(f"Health: {character['health']}")
+    print(f"Gold: {character['gold']}")
 
 def level_up(character):
     """
