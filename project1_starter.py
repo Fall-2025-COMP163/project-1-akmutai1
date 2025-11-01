@@ -98,17 +98,13 @@ def save_character(character, filename):
 def load_character(filename):
     """
     Loads character from text file.
-    Returns: character dictionary.
+    Returns: character dictionary, or None if file doesn't exist.
     """
-    with open(filename, "r") as file:
-        lines = file.readlines()
-
-    character = {}
-    for line in lines:
-        key, value = line.strip().split(": ")
-        key = key.lower().replace("character name", "name")
-        character[key] = int(value) if value.isdigit() else value
-    return character
+    try:
+        with open(filename, "r") as file:
+            lines = file.readlines()
+    except FileNotFoundError:
+        return None  # to return none for missing files.
 
 
 def display_character(character):
