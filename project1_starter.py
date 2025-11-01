@@ -91,17 +91,20 @@ def load_character(filename):
     Loads character from text file.
     Returns: character dictionary.
     """
-    with open(filename, "r") as file:
-        lines = file.readlines()
+    try:
+        with open(filename, "r") as file:
+            lines = file.readlines()
 
-    character = {}
-    for line in lines:
-        if ":" in line:
-            key, value = line.strip().split(":", 1)
-            key = key.lower().replace("character name", "name").strip()
-            value = value.strip()
-            character[key] = int(value) if value.isdigit() else value
-    return character
+        character = {}
+        for line in lines:
+            if ":" in line:
+                key, value = line.strip().split(":", 1)
+                key = key.lower().replace("character name", "name").strip()
+                value = value.strip()
+                character[key] = int(value) if value.isdigit() else value
+        return character
+    except Exception:
+        return {}
 
 
 def display_character(character):
