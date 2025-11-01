@@ -105,9 +105,11 @@ def load_character(filename):
 
     character = {}
     for line in lines:
-        key, value = line.strip().split(": ")
-        key = key.lower().replace("character name", "name")
-        character[key] = int(value) if value.isdigit() else value
+        if ":" in line:
+            key, value = line.strip().split(":", 1)
+            key = key.lower().replace("character name", "name").strip()
+            value = value.strip()
+            character[key] = int(value) if value.isdigit() else value
     return character
 
 
