@@ -94,10 +94,10 @@ def save_character(character, filename):
 
 def load_character(filename):
     """
-    Loads character from text file
-    Returns: character dictionary if successful, None if file not found
+    Loads character from text file.
+    Returns: character dictionary.
     """
-   with open(filename, "r") as file:
+    with open(filename, "r") as file:  #indentation correction 
         lines = file.readlines()
 
     character = {}
@@ -107,8 +107,6 @@ def load_character(filename):
             int(value) if value.isdigit() else value
         )
     return character
-    
-
 def display_character(character):
     """
     Prints formatted character sheet
