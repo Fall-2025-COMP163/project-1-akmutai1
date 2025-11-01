@@ -140,9 +140,13 @@ def level_up(character):
     Modifies the character dictionary directly
     Returns: None
     """
-    # TODO: Implement this function
-    # Remember to recalculate stats for the new level
-    pass
+    character["level"] += 1
+    new_stats = calculate_stats(character["class"], character["level"])
+    character["strength"] = new_stats["strength"]
+    character["magic"] = new_stats["magic"]
+    character["health"] = new_stats["health"]
+    print(f"{character['name']} leveled up to Level {character['level']}!")
+    return character
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
