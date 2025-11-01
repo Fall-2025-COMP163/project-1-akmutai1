@@ -72,6 +72,15 @@ def save_character(character, filename):
     """
     Saves character to text file in specific format
     Returns: True if successful, False if error occurred
+    
+    Required file format:
+    Character Name: [name]
+    Class: [class]
+    Level: [level]
+    Strength: [strength]
+    Magic: [magic]
+    Health: [health]
+    Gold: [gold]
     """
     try:
         with open(filename, "w") as file:
@@ -83,24 +92,23 @@ def save_character(character, filename):
             file.write(f"Health: {character['health']}\n")
             file.write(f"Gold: {character['gold']}\n")
         return True
-    except Exception:
+    except:
         return False
 
 def load_character(filename):
-    """Loads a character's stats from a file and returns a dictionary"""
-    try:
-        with open(filename, "r") as file:
-            lines = file.readlines()
-    except FileNotFoundError:
-        return None  # only return None if file doesn’t exist
+    """
+    Loads character from text file.
+    Returns: character dictionary.
+    """
+    with open(filename, "r") as file:
+        lines = file.readlines()
 
-    char = {}
+    character = {}
     for line in lines:
         key, value = line.strip().split(": ")
-        if key in ["Level", "Strength", "Magic", "Health", "Gold"]:
-            value = int(value)
-        char[key] = value
-    return char 
+        key = key.lower().replace("character name", "name")
+        character[key] = int(value) if value.isdigit() else value
+    return character
 
 
 def display_character(character):
