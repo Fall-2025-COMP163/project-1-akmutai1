@@ -145,7 +145,7 @@ def level_up(character):
     print(f"{character['name']} leveled up to Level {character['level']}!")
     return character
 
-Main program area (optional - for testing your functions)
+# Main program area (optional - for testing your functions)
 if __name__ == "__main__":
     # print("=== CHARACTER CREATOR ===")
     # print("Test your functions here!")
