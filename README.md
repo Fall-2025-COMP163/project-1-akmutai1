@@ -97,3 +97,7 @@ Modifying protected files will result in automatic academic integrity violation
 Implementation (70%): Function correctness, file operations, error handling
 
 Interview (30%): Code explanation and live coding challenge
+
+AI Usage: I used AI to help with identifying and fixing indentation issues in the load_character function and to clarify some error handling logic in file operations.
+
+This program allows the creation, display, saving, and loading of RPG-style characters. Characters have attributes such as name, class, level, strength, magic, health, and gold. The program also includes functionality to level up characters and maintain their stats. File operations ensure characters can be saved to and loaded from text files in a consistent format.
