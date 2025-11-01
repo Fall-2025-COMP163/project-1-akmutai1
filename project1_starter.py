@@ -143,7 +143,6 @@ def level_up(character):
     character["strength"] = strength
     character["magic"] = magic
     character["health"] = health
-    print(f"{character['name']} leveled up to Level {character['level']}!")
     return character
 
 # Main program area (optional - for testing your functions)
