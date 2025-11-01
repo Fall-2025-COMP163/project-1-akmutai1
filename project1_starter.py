@@ -95,16 +95,27 @@ def save_character(character, filename):
     except:
         return False
 
-def load_character(filename):
-    """
-    Loads character from text file.
-    Returns: character dictionary, or None if file doesn't exist.
-    """
-    try:
+ try:
         with open(filename, "r") as file:
             lines = file.readlines()
+
+        character = {}
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue  #skipping over empty
+            if ":" not in line:
+                continue  # skipping over bad lines
+            key, value = line.split(":", 1) 
+            key = key.strip().lower().replace("character name", "name")
+            value = value.strip()
+            # changes numerics to int
+            if key in ("level", "strength", "magic", "health", "gold") and value.isdigit():
+                value = int(value)
+            character[key] = value
+        return character
     except FileNotFoundError:
-        return None  # to return none for missing files.
+        return None
 
 
 def display_character(character):
