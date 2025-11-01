@@ -72,15 +72,6 @@ def save_character(character, filename):
     """
     Saves character to text file in specific format
     Returns: True if successful, False if error occurred
-    
-    Required file format:
-    Character Name: [name]
-    Class: [class]
-    Level: [level]
-    Strength: [strength]
-    Magic: [magic]
-    Health: [health]
-    Gold: [gold]
     """
     try:
         with open(filename, "w") as file:
@@ -92,7 +83,7 @@ def save_character(character, filename):
             file.write(f"Health: {character['health']}\n")
             file.write(f"Gold: {character['gold']}\n")
         return True
-    except:
+    except Exception:
         return False
 
 def load_character(filename):
