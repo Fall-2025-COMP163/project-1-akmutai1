@@ -66,7 +66,7 @@ def calculate_stats(character_class, level):
     else:
         strength, magic, health = 0, 0, 0
     return strength, magic, health
-     # used AI to find indentation error in first if statement, to find UnboundLocalError in line 54.
+    # used AI to find indentation error in first if statement, to find UnboundLocalError in line 54.
 
 def save_character(character, filename):
     """
@@ -83,7 +83,7 @@ def save_character(character, filename):
     Gold: [gold]
     """
    try:
-    with open(filename, "w") as file:
+       with open(filename, "w") as file:
             file.write(f"Character Name: {character['name']}\n")
             file.write(f"Class: {character['class']}\n")
             file.write(f"Level: {character['level']}\n")
@@ -150,11 +150,4 @@ def level_up(character):
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
-    # print("=== CHARACTER CREATOR ===")
-    # print("Test your functions here!")
-    # # Example usage:
-    # char = create_character("TestHero", "Warrior")
-    # # display_character(char)
-    # save_character(char, "my_character.txt")
-    # loaded = load_character("my_character.txt")
     pass
