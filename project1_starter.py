@@ -100,17 +100,15 @@ def load_character(filename):
     Loads character from text file.
     Returns: character dictionary.
     """
-    with open(filename, "r") as file:  #indentation correction 
+    with open(filename, "r") as file:
         lines = file.readlines()
 
     character = {}
     for line in lines:
         key, value = line.strip().split(": ")
-        character[key.lower().replace(" ", "_")] = (
-            int(value) if value.isdigit() else value
-        )
+        key = key.lower().replace("character name", "name")
+        character[key] = int(value) if value.isdigit() else value
     return character
-def display_character(character):
     """
     Prints formatted character sheet
     Returns: None (prints to console)
