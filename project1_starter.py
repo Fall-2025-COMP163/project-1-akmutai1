@@ -53,7 +53,7 @@ def calculate_stats(character_class, level):
         magic = 15 + (level - 1) * 3
         health = 80 + (level - 1) * 8
 
-    elif character_class.lower() == "rouge":
+    elif character_class.lower() == "rogue":
         strength = 10 + (level - 1) * 2
         magic = 10 + (level - 1) * 2
         health = 70 + (level - 1) * 6
@@ -64,7 +64,7 @@ def calculate_stats(character_class, level):
         health = 110 + (level - 1) * 8
 
     else:
-        print("Invalid character class")
+        strength, magic, health = 0, 0, 0
     return strength, magic, health
      # used AI to find indentation error in first if statement, to find UnboundLocalError in line 54.
 
@@ -83,7 +83,7 @@ def save_character(character, filename):
     Gold: [gold]
     """
    try:
-        with open(filename, "w") as file:
+    with open(filename, "w") as file:
             file.write(f"Character Name: {character['name']}\n")
             file.write(f"Class: {character['class']}\n")
             file.write(f"Level: {character['level']}\n")
@@ -109,6 +109,9 @@ def load_character(filename):
         key = key.lower().replace("character name", "name")
         character[key] = int(value) if value.isdigit() else value
     return character
+
+
+def display_character(character):
     """
     Prints formatted character sheet
     Returns: None (prints to console)
