@@ -82,8 +82,8 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
-   try:
-       with open(filename, "w") as file:
+    try:
+        with open(filename, "w") as file:
             file.write(f"Character Name: {character['name']}\n")
             file.write(f"Class: {character['class']}\n")
             file.write(f"Level: {character['level']}\n")
