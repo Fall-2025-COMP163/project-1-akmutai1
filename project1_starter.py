@@ -87,24 +87,19 @@ def save_character(character, filename):
         return False
 
 def load_character(filename):
-    """
-    Loads character from text file.
-    Returns: character dictionary.
-    """
+    """Loads a character's stats from a file and returns a dictionary"""
     try:
         with open(filename, "r") as file:
             lines = file.readlines()
-
-        character = {}
+        char = {}
         for line in lines:
-            if ":" in line:
-                key, value = line.strip().split(":", 1)
-                key = key.lower().replace("character name", "name").strip()
-                value = value.strip()
-                character[key] = int(value) if value.isdigit() else value
-        return character
+            key, value = line.strip().split(": ")
+            if key in ["Level", "Strength", "Magic", "Health", "Gold"]:
+                value = int(value)
+            char[key] = value
+        return char
     except Exception:
-        return {}
+        return None  # changed from {} to None
 
 
 def display_character(character):
