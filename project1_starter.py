@@ -91,15 +91,16 @@ def load_character(filename):
     try:
         with open(filename, "r") as file:
             lines = file.readlines()
-        char = {}
-        for line in lines:
-            key, value = line.strip().split(": ")
-            if key in ["Level", "Strength", "Magic", "Health", "Gold"]:
-                value = int(value)
-            char[key] = value
-        return char
-    except Exception:
-        return None  # changed from {} to None
+    except FileNotFoundError:
+        return None  # only return None if file doesn’t exist
+
+    char = {}
+    for line in lines:
+        key, value = line.strip().split(": ")
+        if key in ["Level", "Strength", "Magic", "Health", "Gold"]:
+            value = int(value)
+        char[key] = value
+    return char 
 
 
 def display_character(character):
