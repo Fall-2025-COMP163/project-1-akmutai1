@@ -138,10 +138,10 @@ def level_up(character):
     Returns: None
     """
     character["level"] += 1
-    new_stats = calculate_stats(character["class"], character["level"])
-    character["strength"] = new_stats["strength"]
-    character["magic"] = new_stats["magic"]
-    character["health"] = new_stats["health"]
+    strength, magic, health = calculate_stats(character["class"], character["level"])
+    character["strength"] = strength
+    character["magic"] = magic
+    character["health"] = health
     print(f"{character['name']} leveled up to Level {character['level']}!")
     return character
 
