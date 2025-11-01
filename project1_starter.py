@@ -119,6 +119,7 @@ def load_character(filename):
                 value = int(value)
             character[key] = value
         return character
+        #Used Ai for several indentation issues an to understand erorr handling. Prompt: "explain errors in file handling, do not give me answer."
 
     except FileNotFoundError:
         return None
