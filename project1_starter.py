@@ -53,7 +53,7 @@ def calculate_stats(character_class, level):
         magic = 15 + (level - 1) * 3
         health = 80 + (level - 1) * 8
 
-    elif character_class.lower() == "paladin":
+    elif character_class.lower() == "rouge":
         strength = 10 + (level - 1) * 2
         magic = 10 + (level - 1) * 2
         health = 70 + (level - 1) * 6
